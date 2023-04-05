@@ -1,0 +1,9 @@
+.header{
+    background-color: coral;
+    height: 50px;
+    width: 100%;
+}
+.header a {
+    text-decoration: none;
+    margin-right: 15px;
+}
