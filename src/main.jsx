@@ -3,10 +3,12 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
-import Home from "./Components/Home/Home";
-import "./index.css";
-import LandingHomePage from "./Components/LandingHomePage/LandingHomePage";
+import FriendDetails from "./Components/FriendDetails/FriendDetails";
 import Friends from "./Components/Friends/Friends";
+import Home from "./Components/Home/Home";
+import LandingHomePage from "./Components/LandingHomePage/LandingHomePage";
+import "./index.css";
+import Posts from "./Components/posts/Posts";
 
 // const router = createBrowserRouter([
 //   {
@@ -33,6 +35,11 @@ const router = createBrowserRouter([
         element:<LandingHomePage></LandingHomePage>
       },
       {
+        path:'/posts',
+        element: <Posts></Posts>,
+        loader: ()=>fetch(`https://jsonplaceholder.typicode.com/posts`)
+      },
+      {
         path: 'about',
         element: <About></About>
       },
@@ -44,6 +51,12 @@ const router = createBrowserRouter([
         path:'friends',
         element:<Friends></Friends>,
         loader:()=>fetch('https://jsonplaceholder.typicode.com/users')
+      },
+      {
+        path:'friend/:friendId',
+        element:<FriendDetails></FriendDetails>,
+        loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/users/${params.friendId}`)
+        
       }
     ]
   }
