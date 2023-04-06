@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import ActiveLink from "../ActiveLink/ActiveLink";
 import './Header.css';
 const Header = () => {
   return (
     <div className="header">
-      <Link to="/">Home</Link>
-      <Link to="/about">About </Link>
-      <Link to="/contact">Contact</Link>
-      <Link to="/friends">friends</Link>
-      <Link to="/posts">Posts</Link>
+      <ActiveLink to="/">Home</ActiveLink>
+      <ActiveLink to="/about">About </ActiveLink>
+      <ActiveLink to="/contact">Contact</ActiveLink >
+      <ActiveLink to="/friends">friends</ActiveLink>
+      <ActiveLink to="/posts">Posts</ActiveLink>
     </div>
   );
 };
